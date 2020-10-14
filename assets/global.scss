@@ -1,66 +1,56 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
+
+@import "@carbon/themes/scss/themes";
+
+:root {
+@include carbon--theme($carbon--theme--white, true);
+
 }
 
-body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+:root[theme="g10"] {
+@include carbon--theme($carbon--theme--g10, true);
 }
 
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+:root[theme="g90"] {
+@include carbon--theme($carbon--theme--g90, true);
 }
 
-a:hover {
-	text-decoration: underline;
+:root[theme="g100"] {
+@include carbon--theme($carbon--theme--g100, true);
 }
+$feature-flags: (
+enable-css-custom-properties: true,
+grid-columns-16: true
+);
+$css--font-face: false;
+$css--helpers: true;
+$css--body: true;
+$css--use-layer: true;
+$css--reset: false;
+$css--default-type: false;
+$css--plex: false;
+$carbon--font-families: (
+  'mono':
+    unquote(
+      "'Roboto', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace"
+    ),
+  'sans': unquote("'Roboto', 'Helvetica Neue', 'Arial', sans-serif"),
+  'sans-condensed':
+    unquote("'Roboto', 'Helvetica Neue', 'Arial', sans-serif"),
+  'sans-hebrew':
+    unquote(
+      "'Roboto', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif"
+    ),
+  'serif': unquote("'Roboto', 'Georgia', 'Times', serif"),
+) !default;
 
-a:visited {
-	color: rgb(0,80,160);
-}
 
-label {
-	display: block;
-}
+@import "@carbon/type/scss/type";
+@import "carbon-components/scss/globals/scss/_css--reset";
+// @import "carbon-components/scss/globals/scss/_css--font-face.scss";
+@import "carbon-components/scss/globals/scss/_css--helpers";
+@import "carbon-components/scss/globals/scss/_css--body";
+@import "carbon-components/scss/globals/grid/_grid";
 
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-}
 
-input:disabled {
-	color: #ccc;
-}
-
-input[type="range"] {
-	height: 0;
-}
-
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
-}
-
-button:disabled {
-	color: #999;
-}
-
-button:not(:disabled):active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
-}
+@include carbon--type-reset();
+/* import individual components SCSS */

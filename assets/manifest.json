@@ -1,20 +1,22 @@
 {
   "background_color": "#ffffff",
   "theme_color": "#E938C2",
-  "name": "Routify app",
-  "short_name": "Routify app",
+  "name": "fastmyll",
+  "short_name": "fastmyll",
   "start_url": "/",
   "display": "standalone",
   "icons": [
     {
       "src": "/images/touch-icons/logo-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose" : "maskable"
     },
     {
       "src": "/images/touch-icons/logo-800.png",
       "sizes": "800x800",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose" : "maskable"
     }
   ]
 }
