@@ -1,5 +1,6 @@
 {
   "template": "node",
+  "startScript": "dev:nollup",
   "container": {
     "port": 5000
   }
